@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính Hóa Đơn Cáp</title>
+    <style>
+      #connection-row {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tính Hóa Đơn Cáp</h1>
+
+    <form id="invoice-form">
+      <label for="customer-id">Mã khách hàng:</label>
+      <input type="text" id="customer-id" required /><br /><br />
+
+      <label for="customer-type">Loại khách hàng:</label>
+      <select id="customer-type" required>
+        <option value="residential">Nhà dân</option>
+        <option value="business">Doanh nghiệp</option></select
+      ><br /><br />
+
+      <div id="connection-row">
+        <label for="connections">Số kết nối (Doanh nghiệp):</label>
+        <input type="number" id="connections" min="0" value="0" /><br /><br />
+      </div>
+
+      <label for="channels">Số kênh cao cấp:</label>
+      <input type="number" id="channels" min="0" value="0" /><br /><br />
+
+      <button type="button" id="calculate-btn">Tính hóa đơn</button>
+    </form>
+
+    <h3 id="invoice-result"></h3>
+
+    <script src="index.js"></script>
+  </body>
+</html>

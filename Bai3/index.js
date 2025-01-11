@@ -17,7 +17,7 @@ const getTaxRate = (taxableIncome) => {
   return 35;
 };
 
-const calculateTax = (taxableIncome) => (taxRate) => {
+const calculateTax = (taxableIncome, taxRate) => {
   return (taxableIncome * taxRate) / 100;
 };
 
@@ -26,10 +26,10 @@ const handleCalculateTax = () => {
     incomeInput.value,
     dependentsInput.value
   );
-  const taxAmount = calculateTax(taxableIncome)(getTaxRate(taxableIncome));
+  const taxAmount = calculateTax(taxableIncome, getTaxRate(taxableIncome));
 
   if (isNaN(taxAmount)) {
-    $("#result").innerHTML = `Vui lòng nhập đúng thông tin`;
+    $("result").innerHTML = `Vui lòng nhập đúng thông tin`;
     return;
   }
 
