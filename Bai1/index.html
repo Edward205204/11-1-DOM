@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chương trình quản lý tuyển sinh</title>
+  </head>
+  <body>
+    <h1>Chương trình quản lý tuyển sinh</h1>
+    <h2>Nhập điểm</h2>
+    <label for="input-point">Nhập điểm chuẩn của hội đồng:</label>
+    <input type="text" id="input-point" /> <br /><br />
+
+    <label for="input-point-1">Nhập điểm dự thi 1:</label>
+    <input type="text" id="input-point-1" /> <br /><br />
+
+    <label for="input-point-2">Nhập điểm dự thi 2:</label>
+    <input type="text" id="input-point-2" /> <br /><br />
+
+    <label for="input-point-3">Nhập điểm dự thi 3:</label>
+    <input type="text" id="input-point-3" /> <br /><br />
+
+    <label for="priority-area"
+      >Chọn khu vực ưu tiên (X là ko thuộc khu vực ưu tiên)</label
+    >
+    <select name="priority-area" id="priority-area">
+      <option value="X">X</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+
+    <label for="priority-obj"
+      >Chọn đối tượng ưu tiên (0 là ko thuộc đối tượng ưu tiên)</label
+    >
+    <select name="priority-obj" id="priority-obj">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br />
+    <button
+      style="display: inline-block; width: 100px; height: 50px"
+      id="submit"
+    >
+      OK
+    </button>
+    <h2 id="result"></h2>
+
+    <script src="index.js"></script>
+  </body>
+</html>
