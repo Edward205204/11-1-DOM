@@ -1,9 +1,9 @@
 const $ = document.getElementById.bind(document);
-const incomeInput = $("#income");
-const dependentsInput = $("#dependents");
-const nameInput = $("#name");
+const incomeInput = $("income");
+const dependentsInput = $("dependents");
+const nameInput = $("name");
 
-const getTaxableIncome = (income) => (dependents) => {
+const getTaxableIncome = (income, dependents) => {
   return income - 4 - dependents * 1.6;
 };
 
@@ -22,19 +22,19 @@ const calculateTax = (taxableIncome) => (taxRate) => {
 };
 
 const handleCalculateTax = () => {
-  const taxableIncome = getTaxableIncome(parseFloat(incomeInput.value))(
-    parseInt(dependentsInput.value)
+  const taxableIncome = getTaxableIncome(
+    incomeInput.value,
+    dependentsInput.value
   );
-  const taxRate = getTaxRate(taxableIncome);
-  const taxAmount = calculateTax(taxableIncome)(taxRate);
+  const taxAmount = calculateTax(taxableIncome)(getTaxRate(taxableIncome));
 
   if (isNaN(taxAmount)) {
     $("#result").innerHTML = `Vui lòng nhập đúng thông tin`;
     return;
   }
 
-  $("#result").innerHTML =
+  $("result").innerHTML =
     `${nameInput.value} phải trả thuế là: ${taxAmount.toFixed(2)} triệu đồng.`;
 };
 
-$("#calculate-tax").addEventListener("click", handleCalculateTax);
+$("calculate-tax").addEventListener("click", handleCalculateTax);
