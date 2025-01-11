@@ -18,16 +18,16 @@ const calculateElectricityBill = (kw) => {
 };
 
 const handleCalculate = () => {
-  const name = $("#name").value;
-  const kw = parseFloat($("#kw").value);
+  const name = $("name").value;
+  const kw = parseFloat($("kw").value);
 
   if (isNaN(kw) || kw < 0) {
-    $("#result").innerHTML = "Vui lòng nhập số KW hợp lệ.";
+    $("result").innerHTML = "Vui lòng nhập số KW hợp lệ.";
     return;
   }
 
-  $("#result").innerHTML =
+  $("result").innerHTML =
     `${name} phải trả tiền điện là: ${calculateElectricityBill(kw).toLocaleString()} đồng.`;
 };
 
-$("#calculate").addEventListener("click", handleCalculate);
+$("calculate").addEventListener("click", handleCalculate);
