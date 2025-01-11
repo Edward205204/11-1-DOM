@@ -46,16 +46,16 @@ const handleSubmit = () => {
   );
 
   if (isNaN(calculateTotalPoints)) {
-    document.getElementById("result").innerHTML = `Vui lòng nhập đúng số điểm`;
+    $("result").innerHTML = `Vui lòng nhập đúng số điểm`;
     return;
   }
 
   if (calculateTotalPoints >= parseFloat(inputPoint.value)) {
-    document.getElementById("result").innerHTML =
+    $("result").innerHTML =
       `Chúc mừng bạn đã đậu với số điểm là ${calculateTotalPoints}`;
   } else {
-    document.getElementById("result").innerHTML =
+    $("result").innerHTML =
       `Rất tiếc bạn đã rớt với số điểm là ${calculateTotalPoints}`;
   }
 };
-document.getElementById("submit").addEventListener("click", handleSubmit);
+$("submit").addEventListener("click", handleSubmit);
